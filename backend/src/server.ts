@@ -1,21 +1,40 @@
-import express from 'express'
-import cors from 'cors'
-import dotenv from 'dotenv'
+// server.ts
+import express from 'express';
+import cors from 'cors';
+import helmet from 'helmet';
+import morgan from 'morgan';
+import cookieParser from 'cookie-parser';
 
-dotenv.config();
+import { config } from '@/utils/config';
+import { errorHandler } from '@/interfaces/middleware/errorHandler';
+import { buildAuthRouter } from '@/interfaces/routes/auth.routes';
 
-const PORT = process.env.PORT || 5000;
+import { container } from '@/composition/container';
+
 const app = express();
 
-app.use(cors());
+// ---------- Middlewares ----------
+app.use(helmet());
+app.use(
+  cors({
+    origin: true, // prod me allowlist better hota hai
+    credentials: true,
+  })
+);
+app.use(morgan(config.nodeEnv === 'production' ? 'combined' : 'dev'));
+app.use(express.json({ limit: '2mb' }));
+app.use(cookieParser());
 
-app.get('/', (req, res)=>{
+// ---------- Health ----------
+app.get('/health', (_req, res) => res.json({ ok: true }));
 
-    return res.status(200).json({
-        success: "API testing successfull"
-    }) 
+// ---------- Routes ----------
+app.use('/auth', buildAuthRouter(container.authController, container.tokenService));
+
+// ---------- Error handler (last) ----------
+app.use(errorHandler);
+
+// ---------- Start ----------
+app.listen(config.port, () => {
+  console.log(`Server running on http://localhost:${config.port}`);
 });
-
-app.listen(PORT, ()=>{
-    console.log(`Server is listening on PORT ${PORT}`)
-})
