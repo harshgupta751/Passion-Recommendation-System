@@ -1,5 +1,5 @@
 import cv2
-
+import os
 from pose_detection import get_pose_landmarks
 from body_crop import crop_body
 from clothing_classification import classify

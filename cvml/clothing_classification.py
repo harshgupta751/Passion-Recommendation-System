@@ -1,21 +1,46 @@
-import tensorflow as tf
+import os
 import cv2
 import numpy as np
+import tensorflow as tf
 
-model = tf.keras.models.load_model("models/clothing_classifier.h5")
+MODEL_PATH = "models/clothing_classifier.h5"
+IMG_SIZE = (224, 224)
 
-classes = ["tshirt", "shirt", "kurta", "jeans", "trousers"]
+CLASSES = ['jeans', 'kurta', 'shirt', 'tshirt', 'trousers']
+# Replace with your actual class order
 
-def classify(img_path):
+
+if not os.path.exists(MODEL_PATH):
+    raise FileNotFoundError(f"Model not found at {MODEL_PATH}")
+
+model = tf.keras.models.load_model(MODEL_PATH)
+
+def classify(img_path: str) -> str:
+    """
+    Takes image path → returns predicted clothing label
+    """
+
+    if not os.path.exists(img_path):
+        raise FileNotFoundError(f"Image not found: {img_path}")
+
     img = cv2.imread(img_path)
-    img = cv2.resize(img, (224,224))
+
+    if img is None:
+        raise ValueError(f"Failed to load image: {img_path}")
+
+    # Resize
+    img = cv2.resize(img, IMG_SIZE)
+
+    # Normalize
     img = img / 255.0
+
+    # Expand dims → (1, 224, 224, 3)
     img = np.expand_dims(img, axis=0)
 
-    pred = model.predict(img)
-    return classes[np.argmax(pred)]
+    # Predict
+    preds = model.predict(img, verbose=0)
 
-topwear = classify("data/crops/top.jpg")
-bottomwear = classify("data/crops/bottom.jpg")
+    class_index = np.argmax(preds)
+    label = CLASSES[class_index]
 
-print(topwear, bottomwear)
+    return label
