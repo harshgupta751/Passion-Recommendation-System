@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../features/auth/screens//onboarding_screen.dart';
-import '../../features/auth/screens/sign_in_screen.dart';
-import '../../features/auth/screens/sign_up_screen.dart';
-import '../../features/auth/screens/style_quiz_screen.dart';
+import '../../features/auth/presentation/screens/onboarding_screen.dart';
+import '../../features/auth/presentation/screens/sign_in_screen.dart';
+import '../../features/auth/presentation/screens/sign_up_screen.dart';
+import '../../features/auth/presentation/screens/style_quiz_screen.dart';
 import '../../features/auth/providers/auth_provider.dart';
 import '../../features/closet/presentation/screens/closet_screen.dart';
 import '../../features/closet/presentation/screens/item_detail_screen.dart';

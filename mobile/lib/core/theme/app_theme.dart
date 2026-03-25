@@ -280,7 +280,7 @@ class AppTheme {
           prefixIconColor: AppColors.textSecondary,
           suffixIconColor: AppColors.textSecondary,
         ),
-        cardTheme: CardTheme(
+        cardTheme: CardThemeData(
           color: AppColors.backgroundCard,
           elevation: 0,
           shape: RoundedRectangleBorder(
@@ -349,7 +349,7 @@ class AppTheme {
             ),
           ),
         ),
-        cardTheme: CardTheme(
+        cardTheme: CardThemeData(
           color: AppColors.backgroundLightCard,
           elevation: 0,
           shape: RoundedRectangleBorder(

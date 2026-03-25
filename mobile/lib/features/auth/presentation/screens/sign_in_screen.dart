@@ -3,14 +3,14 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../core/theme/app_theme.dart';
-import '../../../../core/router/app_router.dart';
-import '../providers/auth_provider.dart';
-import '../widgets/AuthPrimaryButton.dart';
-import '../widgets/AuthSecondaryButton.dart';
-import '../widgets/auth_divider.dart';
-import '../widgets/social_auth_button.dart';
-import '../widgets/drobe_text_field.dart';
+import '../../../../../core/theme/app_theme.dart';
+import '../../../../../core/router/app_router.dart';
+import '../../providers/auth_provider.dart';
+import '../../widgets/auth_primary_button.dart';
+import '../../widgets/auth_secondary_button.dart';
+import '../../widgets/auth_divider.dart';
+import '../../widgets/social_auth_button.dart';
+import '../../widgets/drobe_text_field.dart';
 
 class SignInScreen extends ConsumerStatefulWidget {
   const SignInScreen({super.key});

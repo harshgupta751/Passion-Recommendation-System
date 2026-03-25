@@ -2,9 +2,9 @@ import 'dart:async';
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../core/network/dio_client.dart';
-import '../../../core/constants/app_constants.dart';
-import '../domain/entities/clothing_item.dart';
+import '../../../../../core/network/dio_client.dart';
+import '../../../../../core/constants/app_constants.dart';
+import '../../domain/entities/clothing_item.dart';
 
 // ─── Repository ─────────────────────────────────────────────────────────────
 

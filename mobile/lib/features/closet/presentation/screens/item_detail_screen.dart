@@ -8,7 +8,7 @@ import 'package:intl/intl.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../../core/router/app_router.dart';
 import '../../../../core/network/dio_client.dart';
-import '../../providers//closet_provider.dart';
+import '../providers/closet_provider.dart';
 import '../../domain/entities/clothing_item.dart';
 
 final _itemDetailProvider =

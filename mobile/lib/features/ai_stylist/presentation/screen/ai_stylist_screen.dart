@@ -7,7 +7,7 @@ import 'package:go_router/go_router.dart';
 import '../../../../core/constants/app_constants.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../closet/domain/entities/clothing_item.dart';
-import '../../../closet/providers/closet_provider.dart';
+import '../../../closet/presentation/providers/closet_provider.dart';
 
 class AiStylistScreen extends ConsumerStatefulWidget {
   const AiStylistScreen({super.key});

@@ -6,7 +6,7 @@ import 'package:go_router/go_router.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../../core/router/app_router.dart';
 import '../../../closet/domain/entities/clothing_item.dart';
-import '../../../closet/providers/closet_provider.dart';
+import '../../../closet/presentation/providers/closet_provider.dart';
 
 // ─── Outfit entity ────────────────────────────────────────────────────────
 

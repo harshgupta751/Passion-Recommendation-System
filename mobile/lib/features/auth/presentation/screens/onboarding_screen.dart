@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../core/theme/app_theme.dart';
-import '../../../../core/router/app_router.dart';
-import '../widgets//AuthPrimaryButton.dart';
-import '../widgets//AuthSecondaryButton.dart';
+import '../../../../../core/theme/app_theme.dart';
+import '../../../../../core/router/app_router.dart';
+import '../../widgets/auth_primary_button.dart';
+import '../../widgets/auth_secondary_button.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});

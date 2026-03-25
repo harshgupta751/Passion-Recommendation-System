@@ -7,7 +7,7 @@ import 'package:go_router/go_router.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../../core/router/app_router.dart';
 import '../../../../core/constants/app_constants.dart';
-import '../../providers/closet_provider.dart';
+import '../providers/closet_provider.dart';
 import '../widgets/clothing_card.dart';
 import '../widgets/category_filter_bar.dart';
 import '../widgets/closet_search_bar.dart';
@@ -206,7 +206,7 @@ class _ClosetScreenState extends ConsumerState<ClosetScreen> {
         crossAxisCount: 2,
         mainAxisSpacing: 12,
         crossAxisSpacing: 12,
-        childDelegate: SliverChildBuilderDelegate(
+        delegate: SliverChildBuilderDelegate(
           (context, i) {
             final item = state.items[i];
             return ClothingCard(
